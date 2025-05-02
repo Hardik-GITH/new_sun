@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> @ Sun Solution |</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFA500;
+            --secondary: #FF8C00;
+            --dark: #333;
+            --light: #fff;
+            --gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 5% 5rem;
+            background: linear-gradient(135deg, rgba(255,165,0,0.1) 0%, rgba(255,255,255,1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 2rem;
+            animation: fadeInLeft 1s ease-out;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            animation: fadeInRight 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.5s;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 5%;
+            background-color: var(--gray);
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+            padding: 2rem 1rem;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 140, 0, 0.1);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 5rem 5%;
+            background-color: var(--light);
+            display: none; /* Hidden by default */
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-details {
+            padding: 1.5rem;
+        }
+        
+        .product-details h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-details .price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-details p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            background-color: var(--gray);
+            display: none; /* Hidden by default */
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .about-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .offer-card {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .offer-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .offer-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background-color: var(--light);
+            display: none; /* Hidden by default */
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .contact-info i {
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            background-color: var(--gray);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 3rem 5% 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+       
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .footer-contact i {
+            margin-right: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem;
+            }
+            
+            .hero {
+                padding-top: 10rem;
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+                                            /* AI Assistant Styles */
+.ai-assistant {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+.ai-button {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.ai-button:hover {
+    transform: scale(1.1);
+    background-color: var(--secondary);
+}
+
+.ai-chatbox {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: none;
+}
+
+.chat-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    height: 300px;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bot-message {
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    align-self: flex-start;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-message {
+    background-color: var(--primary);
+    color: white;
+    border-bottom-right-radius: 5px;
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+}
+
+.chat-input button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Updated Image Gallery Section */
+.image-gallery {
+  padding: 5rem 5%;
+  background-color: var(--light);
+  display: none; /* Hidden by default */
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased from 250px */
+  gap: 25px; /* Increased from 20px */
+}
+
+.gallery-item {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px; /* Increased from 8px */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* More pronounced shadow */
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px); /* More lift on hover */
+  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2); /* Orange tint shadow */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px; /* Increased from 200px */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08); /* Slightly more zoom */
+}
+
+/* Lightbox Styles - Updated */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95); /* Darker background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 85%; /* More screen coverage */
+  max-height: 85%;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh; /* Increased from 80vh */
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 25px; /* More spacing */
+  right: 35px;
+  color: white;
+  font-size: 40px; /* Larger close button */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-lightbox:hover {
+  color: var(--primary); /* Orange on hover */
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px; /* More spacing */
+  transform: translateY(-50%);
+}
+
+.lightbox-nav button {
+  background: rgba(255,255,255,0.4); /* More visible */
+  color: white;
+  border: none;
+  width: 60px; /* Larger buttons */
+  height: 60px;
+  border-radius: 50%;
+  font-size: 28px; /* Larger arrows */
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lightbox-nav button:hover {
+  background: var(--primary); /* Orange on hover */
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for mobile */
+  }
+  
+  .gallery-item img {
+    height: 180px; /* Adjusted for mobile */
+  }
+  
+  .lightbox-nav button {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+  
+  .lightbox-content {
+    max-width: 95%;
+  }
+}
+
+/* Updated Gallery Styles */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Lightbox caption */
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Sun Solution Logo">
+                <div class="logo-text">SUN<span>SOLUTION</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="products">Products</a></li>
+                <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+                <li><button class="cta-button" id="demoButton">Request Demo</button></li>
+            </ul>
+        </nav>
+    </header>
+  
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    </div>
+    <div class="lightbox-nav">
+      <button id="prev-btn">&lt;</button>
+      <button id="next-btn">&gt;</button>
+    </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Revolutionize Your Dairy With <span>Milk DPU</span></h1>
+                <p>The most advanced Dairy Processing Unit for modern milk production facilities. Increase efficiency, ensure quality, and maximize profits with our state-of-the-art solution.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button" id="demoButton2">Request Demo</button>
+                </div>
+                <div class="hero-features">
+                    <p><i class="fas fa-check-circle" style="color: var(--primary);"></i> 30% Increased Efficiency</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--primary);"></i> ISO 9001 Certified</p>
+                    <p><i class="fas fa-check-circle" style="color: var(--primary);"></i> 24/7 Support</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="dpu.jpg" alt="Milk DPU Machine">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Why Choose Sun Solution ?</h2>
+            <p>"Choose Sun Solution for innovative, reliable, and smart technology that transforms your future."</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>High Efficiency</h3>
+                <p>Achieve more with less – Sun Solution ensures maximum results with minimum resources through high efficiency.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Premium Quality</h3>
+                <p>Sun Solution delivers premium quality products you can easily trust  where excellence meets innovation..</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Easy Maintenance</h3>
+                <p>Modular design with easy-access components reduces downtime and simplifies maintenance procedures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="section-title">
+            <h2>Our Team Members</h2>
+            <p>At Sun Solution, our passionate team members are the heart of every innovation dedicated, skilled, and committed to delivering excellence every day.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Mr Deepak</h3>
+                <p>Chief Executive Officer (CEO) </p>
+                <p>2+ years of industry experience.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Mr Hariom</h3>
+                <p>Chief Technology Officer (CTO) </p>
+                <p>28+ years in software development.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Workers</h3>
+                <p>Worker of the company 25+ in working & designing.</p>
+            </div>
+        </div>
+    </section>
+   <!-- Products Section (Hidden by default) -->
+<section class="products" id="products-section">
+    <div class="section-title">
+        <h2>Our Products</h2>
+        <p>High-quality equipment designed to optimize your dairy production process</p>
+    </div>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="dpu.jpg" alt="Milk DPU Standard">
+            </div>
+            <div class="product-details">
+                <h3>Milk DPU</h3>
+                <div class="price">₹15,000</div>
+                <p>12V power supply, Real-time analytics, Easy to operate.</p>
+                <button class="cta-button buy-now" data-product="Milk DPU" data-price="₹15,000">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="printer.jpg" alt="Thermal Receipt Printer">
+            </div>
+            <div class="product-details">
+                <h3>Thermal Receipt Printer</h3>
+                <div class="price">₹1,500</div>
+                <p>Voltage 5V to 9V Size 2 inch paper.</p>
+                <button class="cta-button buy-now" data-product="Thermal Receipt Printer" data-price="₹1,500">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="strrier .jpg" alt="Ultrasonic strrier">
+            </div>
+            <div class="product-details">
+                <h3>Ultrasonic Strrier</h3>
+                <div class="price">₹1,999</div>
+                <p>Digital Ultrasonic strrier high frequency working .</p>
+                <button class="cta-button buy-now" data-product="Pasteurization Unit" data-price="₹750,000">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Image Gallery Section -->
+  <section class="image-gallery" id="gallery-section">
+    <div class="section-title">
+      <h2>Our Gallery</h2>
+      <p>Explore our product images and company photos</p>
+    </div>
+    <div class="gallery-container">
+      <div class="gallery-grid">
+        <div class="gallery-item" data-index="0">
+          <img src="dpu.jpg" alt="Milk DPU">
+          <div class="gallery-caption">Milk DPU Processing Unit</div>
+        </div>
+        <div class="gallery-item" data-index="1">
+          <img src="printer.jpg" alt="Thermal Printer">
+          <div class="gallery-caption">Thermal Printer </div>
+        </div>
+        <div class="gallery-item" data-index="2">
+          <img src="strrier .jpg" alt="Strrier">
+          <div class="gallery-caption">strrier </div>
+        </div>
+        <div class="gallery-item" data-index="3">
+            <img src="strrer1.jpg" alt="Strrier">
+            <div class="gallery-caption">strrier </div>
+          </div>
+        <!-- Add more images as needed -->
+        <div class="gallery-item" data-index="4">
+          <img src="dpu poster.jpg" alt="Sun poster">
+          <div class="gallery-caption">poster </div>
+        </div>
+        <div class="gallery-item" data-index="5">
+            <img src="strrer2.jpg" alt="Strrier">
+            <div class="gallery-caption">strrier </div>
+          </div>
+          <div class="gallery-item" data-index="6">
+            <img src="Dpu interface.jpg" alt="dpu">
+            <div class="gallery-caption">DPU </div>
+          </div>
+          <div class="gallery-item" data-index="7">
+            <img src="featurs.jpg" alt="dpu">
+            <div class="gallery-caption">DPU features </div>
+          </div>
+        </div>
+    </div>
+  </section> 
+
+    <!-- About Section (Hidden by default) -->
+    <section class="about" id="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About Sun Solution</h2>
+                <p>Founded in 2010, Sun Solution has been at the forefront of dairy processing technology, providing innovative solutions to dairy farmers and processors across India.</p>
+                <p>Our mission is to deliver high-quality, efficient, and affordable dairy processing equipment that helps our clients maximize their production while maintaining the highest standards of quality and hygiene.</p>
+                
+                <div class="offer-card">
+                    <h3>Special Limited-Time Offer!</h3>
+                    <p>Get 15% discount on installation and first-year maintenance when you purchase any Milk DPU unit before june 31, 2025.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Hidden by default) -->
+    <section class="contact" id="contact-section">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team for more information or to schedule a consultation</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Our Office</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Near Kajal Juice Corner, Basement , Kewat No. 403 , Khata No. 480, Garhi Brahman ,  Mayur Vihar , Gohana Road. Distt - Sonipat, haryana - 131001  </p>
+                <p><i class="fas fa-phone-alt"></i> +91 7404832473 , 7015832473</p>
+                <p><i class="fas fa-envelope"></i>sunsolution001@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                
+                <h3 style="margin-top: 2rem;">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a> 
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/sunsolution2025/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@sunsolution0" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about"> 
+                <p>Sun Solution provides innovative dairy processing solutions to help producers maximize efficiency and product quality.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/sunsolution2025/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@sunsolution0" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" class="footer-link" data-section="home">Home</a></li>
+                    <li><a href="#" class="footer-link" data-section="products">Products</a></li>
+                    <li><a href="#" class="footer-link" data-section="about">About</a></li>
+                    <li><a href="#" class="footer-link" data-section="contact">Contact</a></li>
+                    <li><a href="#" class="nav-link" data-section="gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="https://sunsolution.my.canva.site/">Milk DPU</a></li>
+                    <li><a href="#">Pasteurizers</a></li>
+                    <li><a href="#">Homogenizers</a></li>
+                    <li><a href="#">Packaging Systems</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Near Kajal Juice Corner, Basement , Kewat No. 403 ,
+                                                           Khata No. 480, Garhi Brahman , 
+                                                          Mayur Vihar , Gohana Road. Distt - Sonipat, haryana - 131001 </p>
+                <p><i class="fas fa-phone-alt"></i> +91 7404832473 , 7015755674</p>
+                <p><i class="fas fa-envelope"></i> sunsolution001@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Sun Solution. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+                                                      <!-- AI Assistant -->
+<div class="ai-assistant">
+    <div class="ai-chatbox" id="aiChatbox">
+        <div class="chat-header">
+            <span>Sun Solution Assistant</span>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot-message">
+                Hello! I'm your Sun Solution assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your question...">
+            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="ai-button" id="aiButton">
+        <i class="fas fa-robot" style="color: white; font-size: 1.5rem;"></i>
+    </button>
+</div>
+                        <!-- ======= END OF ai ADDITION ======= -->
+
+    <script>
+        // Function to show/hide sections based on navigation
+        function showSection(sectionId) {
+            // Hide all sections first
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            if (sectionId === 'home-section') {
+                document.getElementById('home-section').style.display = 'block';
+                document.querySelector('.features').style.display = 'block';
+                document.querySelector('.how-it-works').style.display = 'block';
+            } else {
+                document.getElementById(sectionId).style.display = 'block';
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Navigation event listeners
+        document.querySelectorAll('.nav-link, .footer-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section') + '-section';
+                showSection(sectionId);
+            });
+        });
+        
+        // Show home section by default
+        showSection('home-section');
+        
+        // Function to handle demo request via WhatsApp
+        function requestDemo() {
+            // Get customer details
+            const name = prompt("Please enter your name:");
+            if (!name) return;
+            
+            const phone = prompt("Please enter your phone number:");
+            if (!phone) return;
+            
+            const company = prompt("Please enter your company name (optional):") || "Not provided";
+            
+            // Create WhatsApp message
+            const message = `Hello Sun Solution,\nI would like to request a demo of your Milk DPU system.\n\nName: ${name}\nPhone: ${phone}\nCompany: ${company}\n\nPlease contact me to schedule the demo.`; 
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(message); 
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/917404832473?text=${encodedMessage}`, '_blank');
+        }
+        
+        // Add event listeners for demo buttons
+        document.getElementById('demoButton').addEventListener('click', requestDemo);
+        document.getElementById('demoButton2').addEventListener('click', requestDemo);
+        
+        // Animation on scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.feature-card, .step');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+// Function to handle product purchase via WhatsApp
+function handleProductPurchase(productName, productPrice) {
+    // Get customer details
+    const name = prompt("Please enter your name:");
+    if (!name) return;
+    
+    const phone = prompt("Please enter your phone number:");
+    if (!phone) return;
+    
+    const address = prompt("Please enter your delivery address:") || "Not provided";
+    
+    // Create WhatsApp message
+    const message = `Hello Sun Solution,\nI would like to purchase the following product:\nProduct: ${productName}\nPrice: ${productPrice}\nCustomer Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nPlease contact me to complete the purchase.`;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/917404832473?text=${encodedMessage}`, '_blank');
+}
+
+// Add event listeners for buy now buttons
+document.querySelectorAll('.buy-now').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.getAttribute('data-product');
+        const productPrice = this.getAttribute('data-price');
+        handleProductPurchase(productName, productPrice);
+    });
+});
+    // AI Assistant Functionality
+    
+const aiButton = document.getElementById('aiButton');
+const aiChatbox = document.getElementById('aiChatbox');
+const closeChat = document.getElementById('closeChat');
+const chatBody = document.getElementById('chatBody');
+const userInput = document.getElementById('userInput');
+const sendMessage = document.getElementById('sendMessage');
+
+// Toggle chatbox visibility
+aiButton.addEventListener('click', () => {
+    aiChatbox.style.display = aiChatbox.style.display === 'block' ? 'none' : 'block';
+});
+
+closeChat.addEventListener('click', () => {
+    aiChatbox.style.display = 'none';
+});
+
+// Send message function
+function sendUserMessage() {
+    const message = userInput.value.trim();
+    if (message === '') return;
+    
+    // Add user message to chat
+    const userMessage = document.createElement('div');
+    userMessage.className = 'chat-message user-message';
+    userMessage.textContent = message;
+    chatBody.appendChild(userMessage);
+    
+    // Clear input
+    userInput.value = '';
+    
+    // Scroll to bottom
+    chatBody.scrollTop = chatBody.scrollHeight;
+    
+    // Generate and show bot response
+    setTimeout(() => {
+        const response = generateResponse(message);
+        const botMessage = document.createElement('div');
+        botMessage.className = 'chat-message bot-message';
+        botMessage.textContent = response;
+        chatBody.appendChild(botMessage);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 500);
+}
+
+                                                       // Response logic
+// Response logic
+function generateResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    // Greetings
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+        return "Hello there! Welcome to Sun Solution's AI assistant. I'm here to help you with information about our dairy processing solutions. How can I assist you today?";
+    } 
+    
+    // About Company
+    else if (lowerMessage.includes('about') || lowerMessage.includes('company') || lowerMessage.includes('sun solution')) {
+        return "Sun Solution is a leading provider of innovative dairy processing technology founded in 2010. We specialize in:\n\n" +
+               "• Milk DPU (Dairy Processing Units)\n" +
+               "• Thermal printers for dairy operations\n" +
+               "• Ultrasonic stirrers\n\n" +
+               "Our mission is to revolutionize dairy processing with affordable, high-quality equipment that maximizes efficiency while maintaining hygiene standards.\n\n" +
+               "Would you like to know about our team, products, or something specific?";
+    }
+    
+    // Team Members
+    else if (lowerMessage.includes('team') || lowerMessage.includes('member') || lowerMessage.includes('founder') || 
+             lowerMessage.includes('ceo') || lowerMessage.includes('cto') || lowerMessage.includes('worker')) {
+        return "Our dedicated Sun Solution team includes:\n\n" +
+               "1️⃣ Mr. Deepak - CEO\n   • 2+ years industry experience\n   • Oversees company vision and growth\n\n" +
+               "2️⃣ Mr. Hariom - CTO\n   • 28+ years in software development\n   • Leads our technical innovations\n\n" +
+               "3️⃣ Production Team\n   • 25+ skilled workers\n   • Experts in manufacturing and design\n\n" +
+               "We're proud of our team's expertise in delivering quality dairy solutions!";
+    }
+    
+    // Products and Pricing
+    else if (lowerMessage.includes('product') || lowerMessage.includes('dpu') || lowerMessage.includes('price') || 
+             lowerMessage.includes('cost') || lowerMessage.includes('buy') || lowerMessage.includes('purchase')) {
+        return "Here are our featured products:\n\n" +
+               "🥛 MILK DPU - ₹15,000\n" +
+               "• 12V power supply\n" +
+               "• Real-time analytics\n" +
+               "• Easy operation interface\n" +
+               "• ISO 9001 certified\n\n" +
+               "🖨️ Thermal Receipt Printer - ₹1,500\n" +
+               "• 5V-9V voltage\n" +
+               "• 2-inch paper size\n" +
+               "• Compact design\n\n" +
+               "🌀 Ultrasonic Stirrer - ₹1,999\n" +
+               "• Digital controls\n" +
+               "• High-frequency operation\n" +
+               "• Precision mixing\n\n" +
+               "Would you like details on any specific product or help placing an order?";
+    }
+    
+    // Why Choose Us
+    else if (lowerMessage.includes('why') || lowerMessage.includes('choose') || lowerMessage.includes('difference') || 
+             lowerMessage.includes('benefit') || lowerMessage.includes('advantage')) {
+        return "Here's why dairy businesses choose Sun Solution:\n\n" +
+               "✅ 30% Increased Efficiency\n" +
+               "✅ Premium Quality Materials\n" +
+               "✅ Easy Maintenance Design\n" +
+               "✅ 24/7 Customer Support\n" +
+               "✅ ISO 9001 Certified\n" +
+               "✅ Affordable Pricing\n" +
+               "✅ Made in India\n\n" +
+               "Our Milk DPU can help you streamline operations while maintaining product quality!";
+    }
+    
+    // Special Offers
+    else if (lowerMessage.includes('offer') || lowerMessage.includes('discount') || lowerMessage.includes('deal') || 
+             lowerMessage.includes('promo') || lowerMessage.includes('sale')) {
+        return "Current Special Offers:\n\n" +
+               "🔥 LIMITED TIME: Get 15% OFF installation and first-year maintenance when you purchase any Milk DPU unit before June 31, 2025!\n\n" +
+               "🎁 Bundle Deal: Buy Milk DPU + Thermal Printer together for just ₹16,000 (save ₹500!)\n\n" +
+               "Would you like me to connect you with our sales team for these offers?";
+    }
+    
+    // Gallery/Images
+    else if (lowerMessage.includes('gallery') || lowerMessage.includes('image') || lowerMessage.includes('photo') || 
+             lowerMessage.includes('picture') || lowerMessage.includes('poster')) {
+        return "You can view our product gallery showing:\n\n" +
+               "📸 Milk DPU unit and interface\n" +
+               "📸 Thermal printer in action\n" +
+               "📸 Ultrasonic stirrer details\n" +
+               "📸 Product posters and features\n\n" +
+               "The gallery demonstrates our product quality and capabilities. Would you like me to open the gallery section for you?";
+    }
+    
+    // Location
+    else if (lowerMessage.includes('location') || lowerMessage.includes('address') || lowerMessage.includes('where') || 
+             lowerMessage.includes('office') || lowerMessage.includes('map')) {
+        return "Our company location:\n\n📍 Near Kajal Juice Corner, Basement\n📍 Kewat No. 403, Khata No. 480\n📍 Garhi Brahman, Mayur Vihar\n📍 Gohana Road, Sonipat\n📍 Haryana - 131001\n\n" +
+               "We're open Mon-Fri, 9AM-6PM. Would you like directions?";
+    }
+    
+    // YouTube/Social Media
+    else if (lowerMessage.includes('youtube') || lowerMessage.includes('social') || lowerMessage.includes('channel') || 
+             lowerMessage.includes('media') || lowerMessage.includes('instagram') || lowerMessage.includes('facebook')) {
+        return "Connect with us on:\n\n" +
+               "▶ YouTube: youtube.com/@sunsolution0 (Product demos)\n" +
+               "📷 Instagram: instagram.com/sunsolution2025\n" +
+               "👍 Facebook: facebook.com/sunsolution\n\n" +
+               "Follow us for product updates and dairy industry tips!";
+    }
+    
+    // Contact
+    else if (lowerMessage.includes('contact') || lowerMessage.includes('number') || lowerMessage.includes('phone') || 
+             lowerMessage.includes('email') || lowerMessage.includes('whatsapp')) {
+        return "Reach us via:\n\n" +
+               "📞 Phone: +91 7404832473, 7015755674\n" +
+               "📧 Email: sunsolution001@gmail.com\n" +
+               "💬 WhatsApp: wa.me/917404832473\n" +
+               "🕘 Hours: Mon-Fri, 9AM-6PM\n\n" +
+               "Our team is happy to assist with any questions!";
+    }
+    
+    // Help
+    else if (lowerMessage.includes('help') || lowerMessage.includes('support') || lowerMessage.includes('assist')) {
+        return "I can help with:\n\n" +
+               "• Product information\n" +
+               "• Pricing and offers\n" +
+               "• Company details\n" +
+               "• Technical support\n" +
+               "• Placing orders\n\n" +
+               "Try asking about:\n" +
+               "- 'Milk DPU specifications'\n" +
+               "- 'Current discounts'\n" +
+               "- 'How to contact support'\n" +
+               "- 'Company location'";
+    }
+    
+    // Default response
+    else {
+        return "I'm here to help with Sun Solution products and services. You can ask about:\n" +
+               "- Product details/pricing\n" +
+               "- Company information\n" +
+               "- Special offers\n" +
+               "- Technical specifications\n" +
+               "- How to place an order\n\n" +
+               "Or contact us directly at +91 7404832473 for immediate assistance.";
+    }
+}
+
+// Event listeners
+sendMessage.addEventListener('click', sendUserMessage);
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendUserMessage();
+});
+
+                        // Contact form submission - sends WhatsApp message contact form
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    
+    // Create WhatsApp message
+    const whatsappMessage = `New Contact Request from Sun Solution Website:
+    
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${message}
+
+Please respond to this inquiry.`;
+    
+    // Encode for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/917404832473?text=${encodedMessage}`, '_blank');
+    
+    // Show confirmation to user
+    alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon.`);
+    
+    // Reset the form
+    this.reset();
+});
+// Gallery Lightbox functionality
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.querySelector('.close-lightbox');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+let currentImageIndex = 0;
+const images = Array.from(galleryItems).map(item => {
+  return {
+    src: item.querySelector('img').getAttribute('src'),
+    alt: item.querySelector('img').getAttribute('alt')
+  };
+});
+
+// Open lightbox when clicking gallery image
+galleryItems.forEach(item => {
+  item.addEventListener('click', function() {
+    currentImageIndex = parseInt(this.getAttribute('data-index'));
+    updateLightboxImage();
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// Close lightbox
+closeLightbox.addEventListener('click', closeLightboxFunc);
+lightbox.addEventListener('click', function(e) {
+  if (e.target === lightbox) {
+    closeLightboxFunc();
+  }
+});
+
+// Navigation functions
+function updateLightboxImage() {
+  lightboxImg.src = images[currentImageIndex].src;
+  lightboxImg.alt = images[currentImageIndex].alt;
+}
+
+function showPrevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateLightboxImage();
+}
+
+function showNextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateLightboxImage();
+}
+
+function closeLightboxFunc() {
+  lightbox.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Button events
+prevBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  showPrevImage();
+});
+
+nextBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  showNextImage();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'ArrowLeft') {
+      showPrevImage();
+    } else if (e.key === 'ArrowRight') {
+      showNextImage();
+    } else if (e.key === 'Escape') {
+      closeLightboxFunc();
+    }
+  }
+});
+
+</script>
+</body>
+</html>
